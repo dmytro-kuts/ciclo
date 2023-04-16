@@ -160,8 +160,8 @@ body {
     @media (min-width: $mobileSmall) {
       flex-direction: column;
       justify-content: center;
-      padding-top: rem(20);
-      padding-bottom: rem(20);
+      padding-top: rem(60);
+      padding-bottom: rem(60);
     }
     @media (max-width: $mobileSmall) {
       padding-left: rem(0);
@@ -222,7 +222,7 @@ body {
     padding-bottom: rem(30);
     @media (min-width: $mobile) {
       padding-right: rem(20);
-      padding-bottom: rem(50);
+      padding-bottom: rem(60);
     }
   }
   // .slide-02__section-header
@@ -240,7 +240,7 @@ body {
     }
   }
 }
-//========================================================================================================================================================
+// slide-03 ========================================================================================================================================================
 .slide-03 {
   // .slide-03__container
 
@@ -261,7 +261,7 @@ body {
     padding-bottom: rem(30);
     @media (min-width: $mobile) {
       padding-left: rem(20);
-      padding-bottom: rem(50);
+      padding-bottom: rem(60);
     }
   }
 
@@ -296,7 +296,6 @@ body {
     }
   }
 }
-
 .values-slide-03 {
   @include adaptiveValue('padding-top', 120, 45);
   display: grid;
@@ -306,7 +305,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: space-between;
-		gap: rem(15);
+    gap: rem(15);
   }
 
   // .values-slide-03__label
@@ -317,8 +316,8 @@ body {
   // .values-slide-03__value
 
   &__value {
-		color: $darkColor;
-		font-weight: 700;
+    color: $darkColor;
+    font-weight: 700;
   }
 
   // .values-slide-03__line
@@ -327,10 +326,277 @@ body {
     grid-column: span 2;
     background: rgba(28, 31, 37, 0.1);
     height: rem(10);
-		span {
-			height: rem(10);
-			display: block;
-			background-color: $darkColor;
-		}
+    span {
+      height: rem(10);
+      display: block;
+      background-color: $darkColor;
+    }
+  }
+}
+// slide-04 ========================================================================================================================================================
+
+.slide-04 {
+  // .slide-04__container
+
+  &__container {
+    min-height: 100%;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    padding-top: rem(60);
+    padding-bottom: rem(60);
+  }
+
+  // .slide-04__section-header
+
+  &__section-header {
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 153, 40);
+    }
+  }
+
+  // .slide-04__advantages
+
+  &__advantages {
+  }
+}
+
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(220), 1fr));
+  @include adaptiveValue('gap', 50, 20);
+  // .advantages__item
+
+  &__item {
+  }
+
+  // .advantages__icon
+
+  &__icon {
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 26, 12);
+    }
+  }
+
+  // .advantages__title
+
+  &__title {
+    color: $darkColor;
+    font-weight: 700;
+    @include adaptiveValue('font-size', 30, 24);
+    line-height: math.div(38, 30);
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 32, 12);
+    }
+  }
+
+  // .advantages__text
+
+  &__text {
+    line-height: math.div(45, 25);
+  }
+}
+// slide-05 ========================================================================================================================================================
+
+.slide-05 {
+  // .slide-05__container
+
+  &__container {
+    @media (min-width: $mobile) {
+      min-height: 100%;
+      display: flex;
+    }
+  }
+
+  // .slide-05__content
+
+  &__content {
+    align-self: center;
+    flex: 0 1 50%;
+    padding-top: rem(60);
+    padding-bottom: rem(30);
+    @media (min-width: $mobile) {
+      padding-right: rem(20);
+      padding-bottom: rem(60);
+    }
+  }
+
+  // .slide-05__section-header
+
+  &__section-header {
+  }
+
+  // .slide-05__images
+
+  &__images {
+    flex: 0 1 50%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  // .slide-05__image-ibg
+
+  &__image-ibg {
+    @media (max-width: $mobile) {
+      @include adaptiveValue('margin-left', math.div(-$containerPadding, 2), -15);
+      @include adaptiveValue('margin-right', math.div(-$containerPadding, 2), -15);
+
+      img {
+        position: relative;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+}
+// slide-06 ========================================================================================================================================================
+
+.slide-06 {
+  padding-top: rem(60);
+  padding-bottom: rem(30);
+  // .slide-06__container
+
+  &__container {
+    @media (min-width: $tablet) {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  // .slide-06__section-header
+
+  &__section-header {
+    flex: 0 1 50%;
+
+    @media (min-width: $mobile) {
+      padding-right: rem(40);
+    }
+    @media (max-width: $tablet) {
+      padding-bottom: rem(50);
+    }
+  }
+
+  // .slide-06__services
+
+  &__services {
+    flex: 0 1 50%;
+  }
+}
+//========================================================================================================================================================
+.slide-07 {
+  // .slide-07__container
+
+  &__container {
+    @media (min-width: $mobile) {
+      min-height: 100%;
+      display: flex;
+    }
+  }
+
+  // .slide-07__services
+
+  &__services {
+    align-self: center;
+    flex: 0 1 50%;
+    padding-top: rem(60);
+    padding-bottom: rem(30);
+    @media (min-width: $mobile) {
+      padding-right: rem(20);
+      padding-bottom: rem(60);
+    }
+  }
+
+  // .slide-07__image
+
+  &__image {
+    position: relative;
+    flex: 0 1 50%;
+    img {
+      max-width: 100%;
+    }
+    @media (min-width: $mobile) {
+      img {
+        @include adaptiveValue('margin-right', -240, -15);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        object-fit: cover;
+      }
+    }
+  }
+}
+//========================================================================================================================================================
+
+.slide-08 {
+  // .slide-08__container
+
+  &__container {
+    @media (min-width: $mobile) {
+      min-height: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  // .slide-08__content
+
+  &__content {
+    align-self: center;
+    flex: 0 1 50%;
+    padding-top: rem(60);
+    padding-bottom: rem(30);
+    @include adaptiveValue('padding-left', 240, 0, 0, 1920, 768);
+    @media (min-width: $mobile) {
+      padding-bottom: rem(60);
+    }
+  }
+  // .slide-08__section-header
+  &__section-header {
+    @include adaptiveValue('margin-bottom', 190, 30);
+  }
+  // .slide-08__projects
+  &__projects {
+  }
+  // .slide-08__image
+  &__image {
+    flex: 0 1 50%;
+    position: relative;
+    img {
+      max-width: 100%;
+      @media (min-width: $mobile) {
+        @include adaptiveValue('left', 0, -125, 0, 1920, 1100);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        object-fit: cover;
+      }
+    }
+  }
+}
+.projects {
+  display: flex;
+  @include adaptiveValue('gap', 87, 20);
+  // .projects__item
+
+  &__item {
+  }
+  // .projects__value
+  &__value {
+    @include adaptiveValue('font-size', 60, 35);
+    line-height: math.div(75, 60);
+    font-weight: 700;
+    color: $darkColor;
+    &:not(:last-child) {
+      margin-bottom: em(16, 60);
+    }
+  }
+  // .projects__label
+  &__label {
   }
 }
