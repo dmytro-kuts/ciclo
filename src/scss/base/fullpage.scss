@@ -67,7 +67,7 @@ body {
 	z-index: 2;
 	gap: rem(10);
 
-	@media (max-width: $mobileSmall) {
+	@media (max-width: $mobile) {
 		top: auto;
 		bottom: rem(20);
 		transform: translate(50%, 0);
@@ -90,7 +90,7 @@ body {
 				opacity: 1;
 			}
 		}
-		@media (max-width: $mobileSmall) {
+		@media (max-width: $mobile) {
 			width: rem(25);
 			flex: 0 0 rem(25);
 			height: rem(5);

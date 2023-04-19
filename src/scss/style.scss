@@ -159,19 +159,20 @@ body {
   &__container {
     min-height: 100%;
     display: flex;
-    @media (min-width: $mobileSmall) {
+    @media (min-width: $mobile) {
       flex-direction: column;
       justify-content: center;
       padding-top: rem(60);
       padding-bottom: rem(60);
     }
-    @media (max-width: $mobileSmall) {
+    @media (max-width: $mobile) {
       padding-left: rem(0);
       padding-right: rem(0);
     }
   }
   // .slide-01__body
   &__body {
+
     position: relative;
     @include adaptiveValue('padding-top', 155, 50);
     @include adaptiveValue('padding-bottom', 155, 20);
@@ -186,9 +187,10 @@ body {
       left: 0;
       background: rgba(28, 31, 37, 0.6);
     }
-    @media (max-width: $mobileSmall) {
+    @media (max-width: $mobile) {
       display: flex;
       align-items: center;
+      width: 100%;
     }
   }
   // .slide-01__section-header
@@ -204,6 +206,7 @@ body {
     top: 0;
     left: 0;
     object-fit: cover;
+
   }
 }
 // slide-02 ========================================================================================================================================================
@@ -432,12 +435,12 @@ body {
   // .slide-05__image-ibg
   &__image-ibg {
     @media (max-width: $mobile) {
+      min-width: 100%;
       @include adaptiveValue('margin-left', math.div(-$containerPadding, 2), -15);
       @include adaptiveValue('margin-right', math.div(-$containerPadding, 2), -15);
       img {
         position: relative;
-        max-width: 100%;
-        width: auto;
+        width: 100%;
         height: auto;
       }
     }
@@ -661,20 +664,16 @@ body {
       text-align: right;
       padding-left: rem(20);
       @media (max-width: $mobile) {
-        padding: rem(20) rem(60) rem(20) rem(20);
-      }
-      @media (max-width: $mobileSmall) {
         padding: rem(20) rem(20) rem(20) rem(20);
       }
+
     }
     &_bottom {
       padding-right: rem(20);
       @media (max-width: $mobile) {
-        padding: rem(20) rem(20) rem(20) rem(60);
-      }
-      @media (max-width: $mobileSmall) {
         padding: rem(20) rem(20) rem(20) rem(20);
       }
+
     }
   }
   // .item-slide-09__title
