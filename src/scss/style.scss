@@ -72,6 +72,8 @@ body {
   }
   // Сайт завантажений
   .loaded & {
+    opacity: 1;
+    transition: opacity 0.6s ease 0s;
   }
 }
 // Оболонка wrapper ============================================================================================================================================================================================================================================================================================================================================================================================================================================
@@ -243,7 +245,6 @@ body {
 // slide-03 ========================================================================================================================================================
 .slide-03 {
   // .slide-03__container
-
   &__container {
     @media (min-width: $mobile) {
       min-height: 100%;
@@ -251,9 +252,7 @@ body {
       flex-direction: row-reverse;
     }
   }
-
   // .slide-03__content
-
   &__content {
     align-self: center;
     flex: 0 1 50%;
@@ -264,19 +263,13 @@ body {
       padding-bottom: rem(60);
     }
   }
-
   // .slide-03__section-header
-
   &__section-header {
   }
-
   // .slide-03__values
-
   &__values {
   }
-
   // .slide-03__image
-
   &__image {
     position: relative;
     flex: 0 1 50%;
@@ -334,7 +327,6 @@ body {
   }
 }
 // slide-04 ========================================================================================================================================================
-
 .slide-04 {
   // .slide-04__container
 
@@ -361,7 +353,6 @@ body {
   &__advantages {
   }
 }
-
 .advantages {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(rem(220), 1fr));
@@ -369,6 +360,18 @@ body {
   // .advantages__item
 
   &__item {
+    opacity: 0;
+    transition: all 1s ease 0s;
+    transition-delay: 0s;
+    .active-section & {
+      @for $i from 1 through 4 {
+        $delay: $i * 0.3;
+        &:nth-child(#{$i}) {
+          transition-delay: #{$delay}s;
+        }
+      }
+      opacity: 1;
+    }
   }
 
   // .advantages__icon
@@ -398,19 +401,15 @@ body {
   }
 }
 // slide-05 ========================================================================================================================================================
-
 .slide-05 {
   // .slide-05__container
-
   &__container {
     @media (min-width: $mobile) {
       min-height: 100%;
       display: flex;
     }
   }
-
   // .slide-05__content
-
   &__content {
     align-self: center;
     flex: 0 1 50%;
@@ -421,27 +420,20 @@ body {
       padding-bottom: rem(60);
     }
   }
-
   // .slide-05__section-header
-
   &__section-header {
   }
-
   // .slide-05__images
-
   &__images {
     flex: 0 1 50%;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
   }
-
   // .slide-05__image-ibg
-
   &__image-ibg {
     @media (max-width: $mobile) {
       @include adaptiveValue('margin-left', math.div(-$containerPadding, 2), -15);
       @include adaptiveValue('margin-right', math.div(-$containerPadding, 2), -15);
-
       img {
         position: relative;
         max-width: 100%;
@@ -452,7 +444,6 @@ body {
   }
 }
 // slide-06 ========================================================================================================================================================
-
 .slide-06 {
   padding-top: rem(60);
   padding-bottom: rem(30);
@@ -485,7 +476,7 @@ body {
     flex: 0 1 50%;
   }
 }
-//========================================================================================================================================================
+// slide-07 ========================================================================================================================================================
 .slide-07 {
   // .slide-07__container
 
@@ -530,8 +521,7 @@ body {
     }
   }
 }
-//========================================================================================================================================================
-
+// slide-08 ========================================================================================================================================================
 .slide-08 {
   // .slide-08__container
 
@@ -585,6 +575,7 @@ body {
   // .projects__item
 
   &__item {
+
   }
   // .projects__value
   &__value {
@@ -598,5 +589,336 @@ body {
   }
   // .projects__label
   &__label {
+  }
+}
+// slide-09 ========================================================================================================================================================
+.slide-09 {
+  // .slide-09__container
+  &__container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      padding-top: rem(60);
+    }
+  }
+  // .slide-09__section-header
+  &__section-header {
+    @media (min-width: $tablet) {
+      flex: 0 0 33.333%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .section-header {
+        writing-mode: vertical-rl;
+        transform: rotate(-180deg);
+        text-align: center;
+      }
+      .section-header__label {
+        margin-bottom: 0;
+      }
+      .section-header__title {
+        @include adaptiveValue('margin-right', 32, 10);
+        margin-bottom: 0;
+      }
+    }
+    @media (max-width: $tablet) {
+      @include adaptiveValue('margin-bottom', 60, 20);
+    }
+  }
+  // .slide-09__items
+  &__items {
+    flex: 0 0 66.667%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    @media (max-width: $mobile) {
+      @include adaptiveValue('margin-left', math.div(-$containerPadding, 2), -15);
+      @include adaptiveValue('margin-right', math.div(-$containerPadding, 2), -15);
+    }
+  }
+  // .slide-09__item
+  &__item {
+  }
+}
+.item-slide-09 {
+  display: flex;
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+    @media (max-width: $mobileSmall) {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: $mobileSmall) {
+    flex-direction: column;
+  }
+  // .item-slide-09__body
+  &__body {
+    @extend %animate;
+    align-self: center;
+    flex: 0 1 50%;
+    &_top {
+      text-align: right;
+      padding-left: rem(20);
+      @media (max-width: $mobile) {
+        padding: rem(20) rem(60) rem(20) rem(20);
+      }
+      @media (max-width: $mobileSmall) {
+        padding: rem(20) rem(20) rem(20) rem(20);
+      }
+    }
+    &_bottom {
+      padding-right: rem(20);
+      @media (max-width: $mobile) {
+        padding: rem(20) rem(20) rem(20) rem(60);
+      }
+      @media (max-width: $mobileSmall) {
+        padding: rem(20) rem(20) rem(20) rem(20);
+      }
+    }
+  }
+  // .item-slide-09__title
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 32, 15);
+    }
+  }
+  // .item-slide-09__text
+  &__text {
+  }
+  // .item-slide-09__image-ibg
+  &__image-ibg {
+    flex: 0 1 50%;
+    @media (max-width: $tablet) {
+      padding-bottom: 50%;
+    }
+    @media (max-width: $mobileSmall) {
+      padding-bottom: 100%;
+    }
+  }
+}
+// slide-10 ========================================================================================================================================================
+
+.slide-10 {
+  // .slide-10__container
+
+  &__container {
+    display: flex;
+    min-height: 100%;
+    padding-bottom: rem(60);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+    @media (max-width: $mobileSmall) {
+      &:first-child {
+        padding-top: rem(60);
+      }
+    }
+  }
+
+  // .slide-10__item
+
+  &__item {
+    flex: 0 1 33.333%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: rem(20);
+    }
+  }
+
+  // .slide-10__body
+
+  &__body {
+    @extend %animate;
+    padding-right: rem(15);
+    @include adaptiveValue('padding-top', 60, 30, 0, 1920, 768);
+  }
+
+  // .slide-10__title
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 32, 15);
+    }
+  }
+
+  // .slide-10__text
+
+  &__text {
+  }
+
+  // .slide-10__image-ibg
+
+  &__image-ibg {
+    flex-grow: 0;
+    flex-basis: 57.407407%; /* 620/1080 */
+    @media (max-width: $mobile) {
+      padding-bottom: 70%;
+    }
+  }
+}
+// slide-11 ========================================================================================================================================================
+.slide-11 {
+  position: relative;
+  &::before {
+    content: '';
+    background-color: rgba(196, 196, 196, 0.3);
+    position: absolute;
+    width: 37.5%; /* 720/1920 */
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  // .slide-11__container
+  &__container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    min-height: 100%;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-top: rem(60);
+    padding-bottom: rem(60);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+  // .slide-11__items
+  &__items {
+    flex: 0 1 50%;
+    display: grid;
+    @include adaptiveValue('gap', 60, 30);
+    @include adaptiveValue('padding-left', 240, 30, 0, 1920, 768);
+    @media (max-width: $mobile) {
+      margin-bottom: rem(30);
+    }
+  }
+  // .slide-11__item
+  &__item {
+    opacity: 0;
+    transition: all 1s ease 0s;
+    transition-delay: 0s;
+    .active-section & {
+      @for $i from 1 through 4 {
+        $delay: $i * 0.3;
+        &:nth-child(#{$i}) {
+          transition-delay: #{$delay}s;
+        }
+      }
+      opacity: 1;
+    }
+  }
+  // .slide-11__title
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 32, 15);
+    }
+  }
+  // .slide-11__text
+  &__text {
+  }
+  // .slide-11__image
+  &__image {
+    text-align: right;
+    flex: 0 1 50%;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+// slide-12 ========================================================================================================================================================
+
+.slide-12 {
+  // .slide-12__container
+
+  &__container {
+    min-height: 100%;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: $mobile) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  // .slide-12__body
+
+  &__body {
+    @include adaptiveValue('padding-top', 240, 50);
+    @include adaptiveValue('padding-bottom', 240, 20);
+    @include adaptiveValue('padding-left', 240, 15);
+    @include adaptiveValue('padding-right', 240, 15);
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(28, 31, 37, 0.5);
+      @media (max-width: $tablet) {
+        background: rgba(28, 31, 37, 0.8);
+      }
+    }
+    @media (min-width: $tablet) {
+      position: relative;
+    }
+    @media (max-width: $mobileSmall) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  // .slide-12__items
+
+  &__items {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  // .slide-12__item
+
+  &__item {
+    color: #e3e6ec;
+    flex: 0 1 33.333%;
+    text-align: center;
+  }
+
+  // .slide-12__value
+
+  &__value {
+    font-weight: 700;
+    @include adaptiveValue('font-size', 60, 36);
+    line-height: math.div(75, 60);
+  }
+
+  // .slide-12__label
+
+  &__label {
+  }
+
+  // .slide-12__image
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    background-color: #000;
   }
 }
