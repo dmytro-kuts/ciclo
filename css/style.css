@@ -1512,8 +1512,8 @@ h6 {
   }
 
   .slide-01__container {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .slide-01__body {
