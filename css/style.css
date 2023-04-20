@@ -1295,6 +1295,10 @@ h6 {
 }
 
 @media (max-width: 48em) {
+  .page__section::after {
+    right: 2.5rem;
+  }
+
   .slide-08__content {
     padding-left: 0.0000000625rem;
   }
@@ -1323,10 +1327,6 @@ h6 {
 
   .fp-bullets {
     left: 0.46875rem;
-  }
-
-  .page__section::after {
-    right: 0.46875rem;
   }
 
   .page__section::after {
@@ -1512,8 +1512,8 @@ h6 {
   }
 
   .slide-01__container {
-    padding-left: 0rem;
-    padding-right: 0rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .slide-01__body {
@@ -1701,18 +1701,6 @@ h6 {
 @supports not (left: clamp( 0.46875rem , -0.9375rem  +  7.03125vw , 7.5rem )) {
     .fp-bullets {
       left: calc(0.46875rem + 7.03125 * (100vw - 20rem) / 100);
-    }
-}
-
-@supports (right: clamp( 0.46875rem , -0.9375rem  +  7.03125vw , 7.5rem )) {
-    .page__section::after {
-      right: clamp( 0.46875rem , -0.9375rem  +  7.03125vw , 7.5rem );
-    }
-}
-
-@supports not (right: clamp( 0.46875rem , -0.9375rem  +  7.03125vw , 7.5rem )) {
-    .page__section::after {
-      right: calc(0.46875rem + 7.03125 * (100vw - 20rem) / 100);
     }
 }
 
@@ -2077,6 +2065,56 @@ h6 {
 }
 }
 
+@media (min-width: 48em) and (max-width: 120em) {
+@supports (right: clamp( 2.5rem , -0.8333333333rem  +  6.9444444444vw , 7.5rem )) {
+    .page__section::after {
+      right: clamp( 2.5rem , -0.8333333333rem  +  6.9444444444vw , 7.5rem );
+    }
+}
+
+@supports not (right: clamp( 2.5rem , -0.8333333333rem  +  6.9444444444vw , 7.5rem )) {
+    .page__section::after {
+      right: calc(2.5rem + 5 * (100vw - 48rem) / 72);
+    }
+}
+
+@supports (padding-left: clamp( 0.0000000625rem , -9.9999998958rem  +  20.8333332465vw , 15rem )) {
+    .slide-08__content {
+      padding-left: clamp( 0.0000000625rem , -9.9999998958rem  +  20.8333332465vw , 15rem );
+    }
+}
+
+@supports not (padding-left: clamp( 0.0000000625rem , -9.9999998958rem  +  20.8333332465vw , 15rem )) {
+    .slide-08__content {
+      padding-left: calc(0.0000000625rem + 14.9999999375 * (100vw - 48rem) / 72);
+    }
+}
+
+@supports (padding-top: clamp( 1.875rem , 0.625rem  +  2.6041666667vw , 3.75rem )) {
+    .slide-10__body {
+      padding-top: clamp( 1.875rem , 0.625rem  +  2.6041666667vw , 3.75rem );
+    }
+}
+
+@supports not (padding-top: clamp( 1.875rem , 0.625rem  +  2.6041666667vw , 3.75rem )) {
+    .slide-10__body {
+      padding-top: calc(1.875rem + 1.875 * (100vw - 48rem) / 72);
+    }
+}
+
+@supports (padding-left: clamp( 1.875rem , -6.875rem  +  18.2291666667vw , 15rem )) {
+    .slide-11__items {
+      padding-left: clamp( 1.875rem , -6.875rem  +  18.2291666667vw , 15rem );
+    }
+}
+
+@supports not (padding-left: clamp( 1.875rem , -6.875rem  +  18.2291666667vw , 15rem )) {
+    .slide-11__items {
+      padding-left: calc(1.875rem + 13.125 * (100vw - 48rem) / 72);
+    }
+}
+}
+
 @media (min-width: 47.99875em) and (min-width: 20em) and (max-width: 120em) {
 @supports (margin-left: clamp( -15rem , 1.875rem  +  -14.0625vw , -0.9375rem )) {
     .slide-03__image img {
@@ -2177,44 +2215,6 @@ h6 {
 @supports not (margin-right: clamp( -15rem , 1.875rem  +  -14.0625vw , -0.9375rem )) {
     .slide-09__items {
       margin-right: calc(-0.9375rem + -14.0625 * (100vw - 20rem) / 100);
-    }
-}
-}
-
-@media (min-width: 48em) and (max-width: 120em) {
-@supports (padding-left: clamp( 0.0000000625rem , -9.9999998958rem  +  20.8333332465vw , 15rem )) {
-    .slide-08__content {
-      padding-left: clamp( 0.0000000625rem , -9.9999998958rem  +  20.8333332465vw , 15rem );
-    }
-}
-
-@supports not (padding-left: clamp( 0.0000000625rem , -9.9999998958rem  +  20.8333332465vw , 15rem )) {
-    .slide-08__content {
-      padding-left: calc(0.0000000625rem + 14.9999999375 * (100vw - 48rem) / 72);
-    }
-}
-
-@supports (padding-top: clamp( 1.875rem , 0.625rem  +  2.6041666667vw , 3.75rem )) {
-    .slide-10__body {
-      padding-top: clamp( 1.875rem , 0.625rem  +  2.6041666667vw , 3.75rem );
-    }
-}
-
-@supports not (padding-top: clamp( 1.875rem , 0.625rem  +  2.6041666667vw , 3.75rem )) {
-    .slide-10__body {
-      padding-top: calc(1.875rem + 1.875 * (100vw - 48rem) / 72);
-    }
-}
-
-@supports (padding-left: clamp( 1.875rem , -6.875rem  +  18.2291666667vw , 15rem )) {
-    .slide-11__items {
-      padding-left: clamp( 1.875rem , -6.875rem  +  18.2291666667vw , 15rem );
-    }
-}
-
-@supports not (padding-left: clamp( 1.875rem , -6.875rem  +  18.2291666667vw , 15rem )) {
-    .slide-11__items {
-      padding-left: calc(1.875rem + 13.125 * (100vw - 48rem) / 72);
     }
 }
 }
